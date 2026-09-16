@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* Баннер AI */}
       <div onClick={() => triggerAction('ask_nutritionist')} style={{ background: 'linear-gradient(135deg, #f3ecff 0%, #f9f6ff 100%)', margin: '20px', padding: '16px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', border: '1px solid rgba(127, 61, 255, 0.12)', cursor: 'pointer' }}>
-        <div style={{ display: 'flex', itemsAlign: 'center', gap: '15px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <div style={{ background: '#ffffff', width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7f3dff' }}>
             ✨
           </div>
