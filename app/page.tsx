@@ -22,7 +22,6 @@ export default function Home() {
   });
 
   useEffect(() => {
-    // Проверяем, что код выполняется в Telegram
     if (typeof window !== 'undefined' && (window as any).Telegram?.WebApp) {
       const tg = (window as any).Telegram.WebApp;
       tg.expand();
@@ -30,7 +29,6 @@ export default function Home() {
 
       const user = tg.initDataUnsafe?.user;
       if (user?.id) {
-        // Делаем запрос к нашему бэкенду FastAPI
         fetch(`/api/user/${user.id}`)
           .then((res) => res.json())
           .then((data) => setStats(data))
@@ -40,7 +38,6 @@ export default function Home() {
   }, []);
 
   const percent = Math.min(100, Math.round((stats.current_calories / stats.target_calories) * 100)) || 0;
-  // Вычисляем смещение круга для SVG прогресс-бара (длина окружности 2 * PI * 48 = 301.6)
   const strokeDashoffset = 301.6 - (percent / 100) * 301.6;
 
   const triggerAction = (type: string) => {
